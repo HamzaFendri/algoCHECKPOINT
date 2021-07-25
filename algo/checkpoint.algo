@@ -1,0 +1,28 @@
+ALGORITHM counting
+VAR
+    c:CHAR
+    len,nbr_word,nbr_vow:INTEGER
+    
+BEGIN
+    len=nbr_vow=nbr_word=0
+    Read(c)
+    WHILE (c <> ".") DO
+        len+=1
+
+        IF((c in ["a","e","u","o","i","y"]) or (c in ["A","E","U","O","I","Y"]) )
+         nbr_vow+=1
+        END_IF
+
+        IF (c == " ") THEN
+            nbr_word+=1
+        END_IF
+
+        Read(c)
+    END_WHILE
+
+    len+=1
+    nbr_word+=1
+
+    Write("The sentence length is ",len,"number of vowels is ",nbr_vow,"number of words is ",nbr_word)
+
+END
